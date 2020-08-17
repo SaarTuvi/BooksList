@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Books Demo</title>
+    <link href="bootstrap.min.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-3">Books</h1>
+            <form id="book-form">
+                <fieldset>
+                    <div class="form-group">
+                        <label for="title">Book Name:</label>
+                        <input type="text" class="form-control" id="title" aria-describedby="emailHelp"
+                            placeholder="Please Enter Book Title...">
+                    </div>
+                    <div class="form-group">
+                        <label for="author">Author Name:</label>
+                        <input type="text" class="form-control" id="author" aria-describedby="emailHelp"
+                            placeholder="Please Enter Book Author Name...">
+                    </div>
+                    <div class="form-group">
+                        <label for="isbn">ISBN#:</label>
+                        <input type="text" class="form-control" id="isbn" aria-describedby="emailHelp"
+                            placeholder="Please Enter Book ISBN#...">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Book</button>
+                </fieldset>
+            </form>
+
+            <hr class="my-4">
+        </div>
+        <div class="form-group">
+            <label for="sortBy">Sort By</label>
+            <select class="form-control" id="sortBy" onchange="sortBy();">
+              <option value='title'>Title</option>
+              <option value='author'>Author</option>
+              <option value='isbn'>ISBN#</option>
+            </select>
+          </div>
+        <table class="table">
+            <thead>
+                <tr class="table-dark" style="font-size:22px">
+                    <th scope="col">Title</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">ISBN#</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody id="books-list">
+                <tr>
+                    <!-- <th scope="row">Active</th>
+                        <td>Column content</td>
+                        <td>Column content</td>
+                        <td>Column content</td> -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="books.js"></script>
+</body>
+
+</html>

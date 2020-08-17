@@ -1,0 +1,24 @@
+[{
+    "title": "Book1",
+    "author": "Remote1",
+    "isbn": 111111111,
+    "isRemote": true
+},
+{
+    "title": "Book2",
+    "author": "Remote2",
+    "isbn": 222222222,
+    "isLocal": false
+},
+{
+    "title": "Book3",
+    "author": "Remote3",
+    "isbn": 333333333,
+    "isLocal": false
+},
+{
+    "title": "Book4",
+    "author": "Remote4",
+    "isbn": 444444444,
+    "isLocal": false
+    }]

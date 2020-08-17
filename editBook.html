@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Books Demo</title>
+    <link href="bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-3">Edit Book Info    </h1>
+            <form id="edit-book-form">
+                <fieldset>
+                    <div class="form-group">
+                        <label for="title">Book Name:</label>
+                        <input type="text" class="form-control" id="title" aria-describedby="emailHelp" placeholder="Please Enter Book Title...">
+                    </div>
+                    <div class="form-group">
+                        <label for="author">Author Name:</label>
+                        <input type="text" class="form-control" id="author" aria-describedby="emailHelp" placeholder="Please Enter Book Author Name...">
+                    </div>
+                    <div class="form-group">
+                        <label for="isbn">ISBN#:</label>
+                        <input type="text" class="form-control" id="isbn" aria-describedby="emailHelp" placeholder="Please Enter Book ISBN#...">
+                    </div>
+                    <div  class="row">
+                        <div class = 'col'>
+
+                            <button  type="reset" class="btn btn-outline-danger" onclick="cancleChanges();">
+                                Back</button>
+                            </div>
+                        <div class = 'col text-right'>
+
+                         <button type="submit" class="btn btn-success" >Save Changes</button>    
+                        </div>
+                        </div>
+                </fieldset>
+            </form>
+
+            <hr class="my-4">
+
+    <script src="editBook.js"></script>
+</body>
+</html>
