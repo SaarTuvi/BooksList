@@ -64,7 +64,7 @@ class BooksStorage {
     static updateFromRemoteStorage() {
         return new Promise((resolve, reject) => {
             
-            fetch('books.json').then(response => response.json()).then(data => {
+            fetch('../books.json').then(response => response.json()).then(data => {
                 remoteBooks = data;
                 resolve();
                 });
@@ -145,6 +145,9 @@ class UI {
 
 //All DOM Elements ready
 window.addEventListener('DOMContentLoaded', (event) => {
+    let alertString =
+    'In this version the data from BOOKS.JS \r\nis being downloaded from server every 3 minutes'; 
+    alert(alertString);
     let selectBox = document.querySelector("#sortBy");
     let sortingConditionStr = localStorage.getItem('sortBy');
     if (sortingConditionStr != null) {
