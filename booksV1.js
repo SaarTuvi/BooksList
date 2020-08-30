@@ -62,12 +62,15 @@ class BooksStorage {
     }
 
     static updateFromRemoteStorage() { 
+        return new Promise((resolve, reject) => {
             fetch('books.json').then(response => response.json()).then(data => {
                 localStorage.removeItem('remoteBooks');
                 let updatedRemoteBooks = data;
                 let booksJsonText = JSON.stringify(updatedRemoteBooks);
                 localStorage.setItem('remoteBooks', booksJsonText);
+                resolve();
             });
+        })
     }
 
     static checkLastUpdate() {
@@ -175,8 +178,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
         selectBox.selectedIndex = sortingIndex;
     }
     BooksStorage.checkLastUpdate()
-    .then(()=> BooksStorage.updateFromRemoteStorage()).catch(()=> {})
-    .finally(() => UI.displayBooks());
+    .then(()=> BooksStorage.updateFromRemoteStorage())
+    .then(() => UI.displayBooks()).catch(() => UI.displayBooks());
 });
 
 //Register add new book from form inputs
@@ -201,8 +204,8 @@ bookForm.addEventListener('submit', e => {
         book = new Book(titleVal, authorVal, isbnVal, true);
         BooksStorage.addBookToStorage(book);
         BooksStorage.checkLastUpdate()
-        .then(()=> BooksStorage.updateFromRemoteStorage()).catch(()=> {})
-        .finally(() => UI.displayBooks());
+        .then(()=> BooksStorage.updateFromRemoteStorage())
+        .then(() => UI.displayBooks()).catch(() => UI.displayBooks());
         alert("Book Added");
         //Empty form fields
         bookForm.reset();
@@ -214,8 +217,8 @@ bookForm.addEventListener('submit', e => {
 function removeBook(element, isbn) {
     BooksStorage.removeBookFromStorage(isbn)
     BooksStorage.checkLastUpdate()
-    .then(()=> BooksStorage.updateFromRemoteStorage()).catch(()=> {})
-    .finally(() => UI.displayBooks());
+    .then(()=> BooksStorage.updateFromRemoteStorage())
+    .then(() => UI.displayBooks()).catch(() => UI.displayBooks());
     alert("Book Removed");
 }
 
