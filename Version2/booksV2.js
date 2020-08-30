@@ -83,7 +83,7 @@ class UI {
         if (book.isLocal === true) {
             row.innerHTML += `<td><a href="#" id="b-${book.isbn}" onclick = 'removeBook(this,${book.isbn});'>
             <span class="badge badge-pill badge-danger">X</span> </a></td><td>
-            <a href='editBook.html' onclick='passBookToNextPage(this,${book.isbn});'>
+            <a href='editBookV2.html' onclick='passBookToNextPage(this,${book.isbn});'>
             <span class="badge badge-pill badge-info">Edit</span></a></td>`;
         }
         else {

@@ -108,7 +108,7 @@ class UI {
         if (book.isLocal === true) {
             row.innerHTML += `<td><a href="#" id="b-${book.isbn}" onclick = 'removeBook(this,${book.isbn});'>
             <span class="badge badge-pill badge-danger">X</span> </a></td><td>
-            <a href='editBook.html' onclick='passBookToNextPage(this,${book.isbn});'>
+            <a href='editBookV1.html' onclick='passBookToNextPage(this,${book.isbn});'>
             <span class="badge badge-pill badge-info">Edit</span></a></td>`;
         }
         else {
@@ -220,8 +220,7 @@ function removeBook(element, isbn) {
 }
 
 function passBookToNextPage(element, isbn) {
-    let book = BooksStorage.getSelectedBook(isbn);
-    localStorage.setItem('bookToEdit', JSON.stringify(book));
+    localStorage.setItem('bookToEdit', isbn);
 }
 
 function sortBy() {
