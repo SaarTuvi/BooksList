@@ -64,7 +64,7 @@ class BooksStorage {
     static updateFromRemoteStorage() {
         return new Promise((resolve, reject) => {
             
-            fetch('../books.json').then(response => response.json()).then(data => {
+            fetch('books.json').then(response => response.json()).then(data => {
                 remoteBooks = data;
                 resolve();
                 });

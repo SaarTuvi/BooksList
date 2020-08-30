@@ -62,7 +62,7 @@ class BooksStorage {
     }
 
     static updateFromRemoteStorage() { 
-            fetch('../books.json').then(response => response.json()).then(data => {
+            fetch('books.json').then(response => response.json()).then(data => {
                 localStorage.removeItem('remoteBooks');
                 let updatedRemoteBooks = data;
                 let booksJsonText = JSON.stringify(updatedRemoteBooks);
