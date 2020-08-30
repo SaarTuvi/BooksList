@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Books Demo</title>
+    <link href="../bootstrap.min.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-3">Books</h1>
+<h3>Please Choose Site Version</h3>
+    <div class = "row">
+        <div class="col-5">
+            <div>
+               <button onclick="window.location.href='/Version1/indexV1.html'" type="button" class="btn btn-info">Version 1</button>
+            </div>
+            <div>
+                <br/>
+                As requeired:
+                <ul>
+                    <li>Saves remote on localStorage</li>
+                    <li>After every function, checks if it has been 3 minutes since last remote update</li>
+    <li>If less than 3 minutes - uses localStorage, if more, updates it</li>
+    <li>Edit book page only gets ISBN number</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-1">
+        </div>
+        <div class="col-5">
+            <div>
+               <button onclick="window.location.href='/Version2/indexV2.html'" type="button" class="btn btn-info">Version 2</button>
+            </div>
+            <div>
+                <br/>
+                As I Originaly understoof:
+                <ul>
+                    <li>Gets remote data every 3 minutes</li>
+                    <li>Updates every thing accoridngly</li>
+    <li>Does not save remote to localStorage</li>
+    <li>Edit book page gets enitre book entity JSON</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-1">
+        </div>
+
+            <hr class="my-4">
+        </div>
+       
+    </div>
+    <script src="booksV2.js"></script>
+</body>
+
+</html>
