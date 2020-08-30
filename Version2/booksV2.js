@@ -1,5 +1,5 @@
-//Book Model Item
 let remoteBooks = [];
+//Book Model Item
 class Book {
     constructor(title, author, isbn, isLocal) {
         this.title = title;
@@ -72,15 +72,9 @@ class BooksStorage {
     }
 }
 
-
-//Display Data
-//Read data from inputs for new book Item
-//Delete item
-//UI Alrets
 class UI {
     //Add Item of book to table
     static addBookToList(book) {
-        //  this.books.push(book);
         let listTableBody = document.querySelector("#books-list");
         let row = document.createElement("tr");
         row.innerHTML = `<td>${book.title}</td>  
@@ -167,37 +161,27 @@ var bookForm = document.querySelector("#book-form");
 
 // Submit - Takes all input names and values, and sends to server  
 bookForm.addEventListener('submit', e => {
-
-    //Cancel the submit to server (default)
-    //Allows us to handle the submit event
     e.preventDefault();
 
     let titleVal = document.querySelector('#title').value;
     let authorVal = document.querySelector('#author').value;
     let isbnVal = document.querySelector('#isbn').value;
 
-    //alert(titleVal +"-" + authorVal +"-"+isbnVal);
     if (titleVal === '' || authorVal === '' || isbnVal === '') {
         alert('Please fill all inputs')
     }
     else {
-        //When Book Added - it is added to storage and then to UI
-        //Better way is to only deal with Storage - while UI refreshes accordingly
         book = new Book(titleVal, authorVal, isbnVal, true);
         BooksStorage.addBookToStorage(book);
-        // UI.addBookToList(book);
         UI.displayBooks();
         alert("Book Added");
-        //Empty form fields
         bookForm.reset();
     }
 })
 
-//When Book removed - it is removed from storage and then from UI
-//Better way is to only deal with Storage - while UI refreshes accordingly
+
 function removeBook(element, isbn) {
     BooksStorage.removeBookFromStorage(isbn)
-    //UI.removeBookFromList(element);
     UI.displayBooks();
     alert("Book Removed");
 }
@@ -214,16 +198,4 @@ function sortBy() {
     localStorage.setItem('sortBy', JSON.stringify(sortObj));
     UI.displayBooks();
 }
-
-//DevelopTest
-//let b1 = new Book("Fake Title1", "Fake Author1", "111111111");
-//BooksStorage.addBook(b1);
-//let b2 = new Book("Fake Title2", "Fake Author2", "222222222");
-//BooksStorage.addBook(b2);
-//let b3 = new Book("Fake Title3", "Fake Author3", "333333333");
-//BooksStorage.addBook(b3);
-//BooksStorage.removeBook(b2.isbn);
-//UI.displayBooks();
-//UI.addBookToList(b1);
-//UI.addBookToList(b2);
 

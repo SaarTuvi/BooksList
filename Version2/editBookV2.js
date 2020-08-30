@@ -44,7 +44,7 @@ function cancleChanges() {
     }
 }
 
-//Redirects to Bools.html
+//Redirects to Books.html
 function returnToMain() {
     localStorage.removeItem('bookToEdit');
     window.location.href = "index.html";
